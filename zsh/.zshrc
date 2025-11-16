@@ -115,13 +115,18 @@ source <(fzf --zsh)
 
 # Custom clear function
 c() {
-	if [ "$PWD" = "$HOME" ] || git rev-parse --is-inside-work-tree &>/dev/null; then
+	case "$PWD" in
+	"$HOME" || \
+	"/home/shared" || "/home/shared/.config" || \
+	$(git rev-parse --is-inside-work-tree &>/dev/null && echo 1))
 		clear
 		LC_ALL=C ls -A --group-directories-first
-	else
+		;;
+	*)
 		clear
 		LC_ALL=C ls --group-directories-first
-	fi
+		;;
+	esac
 }
 
 # Update git status
