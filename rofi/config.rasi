@@ -1,0 +1,73 @@
+@theme "default"
+
+* {
+	font: "Noto Sans Mono 16";
+}
+
+configuration {
+	display-drun: ">";
+}
+
+window {
+	background-color: #161616;
+	border: 5px;
+}
+
+inputbar {
+	children: [ prompt, entry, num-filtered-rows, num-rows ];
+	spacing: 10px;
+}
+
+prompt {
+	font: "Noto Sans Mono Bold 18";
+	text-color: #78a9ff;
+}
+
+entry {
+	placeholder: "";
+	text-color: white;
+	cursor-width: 13px;
+	cursor-color: white;
+	blink: false;
+}
+
+listview {
+	padding: 10px 0 0 0;
+	border: 2px 0 0 0;
+	border-color: grey;
+	scrollbar: false;
+	spacing: 0;
+	children: [ element ];
+}
+
+element {
+	padding: 0;
+	spacing: 0;
+	children: [ erm, erm2, element-text ];
+}
+
+erm {
+	expand: false;
+	padding: 0 0 0 13px;
+	background-color: #303030;
+}
+
+erm2 {
+	expand: false;
+	padding: 0 0 0 12px;
+	background-color: #161616;
+}
+
+erm2 selected {
+	background-color: #303030;
+}
+
+element-text {
+	highlight: bold;
+	text-color: white;
+	background-color: #161616;
+}
+
+element-text selected {
+	background-color: #303030;
+}

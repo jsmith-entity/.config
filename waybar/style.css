@@ -1,0 +1,29 @@
+* {
+	font-family: "Noto Sans Mono"
+}
+
+window {
+	font-size: 24px;
+	color: #dddddd;
+	background-color: #141414;
+}
+
+#workspaces {
+	margin-left: 20px;
+}
+
+#workspaces button {
+	font-size: 23px;
+	color: #dddddd;
+	border-radius: 0;
+	border-bottom: 2px solid #78a9ff;
+}
+
+#workspaces button.active {
+	font-size: 24px;
+	border-bottom: 4px solid #78a9ff;
+}
+
+.modules-right {
+	margin-right: 25px;
+}
