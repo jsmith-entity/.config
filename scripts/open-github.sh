@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd $(tmux run "echo #{pane_start_path}")
+pwd
 url=$(git remote get-url origin) 
 
 if [[ $url == *github.com* ]]; then
