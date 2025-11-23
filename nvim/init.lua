@@ -16,7 +16,6 @@ vim.o.smartindent = true
 -- Plugins
 vim.pack.add({
 	{ src = "https://github.com/vague-theme/vague.nvim" },
-	{ src = "https://nyoom-engineering/oxocarbon.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
@@ -30,7 +29,7 @@ vim.pack.add({
 vim.cmd("colorscheme vague")
 vim.cmd(":hi statusline guibg=NONE")
 
-vim.lsp.enable({ 'lua_ls' })
+vim.lsp.enable({ 'lua_ls', "bashls" })
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {},
 	sync_install = false,

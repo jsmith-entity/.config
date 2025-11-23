@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CONFIG_DIR="$HOME/.config/"
+
+rm "$CONFIG_DIR/alacritty"
+ln -s "$PWD/alacritty" "$CONFIG_DIR"
+rm "$CONFIG_DIR/hypr"
+ln -s "$PWD/hypr" "$CONFIG_DIR"
+rm "$CONFIG_DIR/nvim"
+ln -s "$PWD/nvim" "$CONFIG_DIR"
+rm "$CONFIG_DIR/rofi"
+ln -s "$PWD/rofi" "$CONFIG_DIR"
+rm "$CONFIG_DIR/scripts"
+ln -s "$PWD/scripts" "$CONFIG_DIR"
+rm "$CONFIG_DIR/tmux"
+ln -s "$PWD/tmux" "$CONFIG_DIR"
+rm "$CONFIG_DIR/waybar"
+ln -s "$PWD/waybar" "$CONFIG_DIR"
+rm "$HOME/.zshrc"
+ln -s "$PWD/zsh/.zshrc" "$HOME/.zshrc"
