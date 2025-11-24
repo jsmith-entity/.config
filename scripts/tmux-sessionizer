@@ -25,9 +25,9 @@ if [[ $# -eq 1 ]]; then
 else
 	selected=$(find \
 		~/ \
-		~/projects/ ~/projects/rust/ ~/projects/ict302 \
-		~/music \
+		~/projects/ ~/projects/rust/ \
 		~/university \
+		/home/shared/ \
 		-mindepth 1 -maxdepth 1 -type d \
 		-not -name '.git' \
 		| fzf --tmux center,85% --color='info:#78a9ff,hl:#33b1ff,hl+:#33b1ff')
