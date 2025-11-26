@@ -24,12 +24,29 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
+	{ src = "https://github.com/Saghen/blink.cmp" },
 })
 
 vim.cmd("colorscheme vague")
 vim.cmd(":hi statusline guibg=NONE")
 
-vim.lsp.enable({ 'lua_ls', "bashls", "denols", "dartls" })
+vim.lsp.enable({ 
+	'lua_ls', 
+	"bashls", 
+	"denols", 
+	"dartls",
+	"pyright",
+})
+
+vim.lsp.config("pyright", {
+	settings = {
+		python = {
+			venvPath = ".",
+			pythonPath = ".venv/bin/python",
+		},
+	},
+})
+
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {},
 	sync_install = false,
