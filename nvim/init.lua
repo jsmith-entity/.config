@@ -7,7 +7,7 @@ vim.o.incsearch = true
 vim.o.termguicolors = true
 vim.o.scrolloff = 12
 vim.o.signcolumn = "yes"
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "81"
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
@@ -35,16 +35,7 @@ vim.lsp.enable({
 	"bashls", 
 	"denols", 
 	"dartls",
-	"pyright",
-})
-
-vim.lsp.config("pyright", {
-	settings = {
-		python = {
-			venvPath = ".",
-			pythonPath = ".venv/bin/python",
-		},
-	},
+	"basedpyright",
 })
 
 require("nvim-treesitter.configs").setup({

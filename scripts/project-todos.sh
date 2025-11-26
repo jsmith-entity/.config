@@ -76,7 +76,7 @@ elif [[ $NEW_TASK -eq 1 ]]; then
 	task_file="$task_dir/task.md"
 
 	mkdir -p $task_dir
-	create_task $task_file $task_name
+	create_task $task_file "$task_name"
 
 	nvim $task_file
 fi
