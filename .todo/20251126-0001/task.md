@@ -2,7 +2,7 @@
 
 - STATUS: CLOSED
 - PRIORITY: 99
-- TAGS: 
+- TAGS: 'todo mgr.'
 
 Adding a task only writes the first word of input to the heading line. It should
 instead take the whole input

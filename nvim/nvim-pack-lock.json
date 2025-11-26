@@ -37,6 +37,10 @@
       "rev": "3a12a853ebf21ec1cce9a92290e3013f8ae75f02",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
     "vague.nvim": {
       "rev": "dba28050887c2810b5ebf9e0143b4e919bd55757",
       "src": "https://github.com/vague-theme/vague.nvim"

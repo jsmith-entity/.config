@@ -43,15 +43,23 @@ if [[ $OPEN_TASK -eq 1 ]]; then
 		file="$task/task.md"
 		task_name=$(head -n 1 $file)
 		priority=$(grep -m 1 '^- PRIORITY:' "$file" | awk -F': ' '{print $2}')
-		priority=$(printf "%02d" "$priority")
-		entries+=("$(basename $task) $priority $task_name")
+		priority=$(printf "[PRIORITY: %02d]" "$priority")
+		tags=$(grep -m 1 '^- TAGS:' "$file" | awk -F': ' '{print $2}')
+		tags=$(printf "[TAGS: %s]" "$tags")
+		entries+=("$(basename $task) $priority $tags $task_name")
 	done 
 
 	# Select todo task
 	selected_task=$(printf "%s\n" "${entries[@]}" \
 		| sort -k2,2nr \
 		| fzf --reverse \
-		| awk '{print $1}')/task.md
+		| awk '{print $1}')
+
+	if [ -z "$selected_task" ]; then
+		exit 1
+	else
+		selected_task="$selected_task/task.md"
+	fi
 
 	file_location="$PWD/$TODO_FOLDER/$selected_task"
 	nvim $file_location

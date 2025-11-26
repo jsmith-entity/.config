@@ -134,3 +134,6 @@ source ~/.config/scripts/git-status.sh
 if [[ -z "${precmd_functions[(r)tmux_update_git_status]}" ]]; then
   precmd_functions+=(tmux_update_git_status)
 fi
+
+# Created by `pipx` on 2025-11-26 07:21:04
+export PATH="$PATH:/home/jsmith/.local/bin"

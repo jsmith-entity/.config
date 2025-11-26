@@ -25,6 +25,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 	{ src = "https://github.com/Saghen/blink.cmp" },
+	{ src = "https://github.com/folke/todo-comments.nvim" },
 })
 
 vim.cmd("colorscheme vague")
@@ -36,6 +37,7 @@ vim.lsp.enable({
 	"denols", 
 	"dartls",
 	"basedpyright",
+	"djlsp",
 })
 
 require("nvim-treesitter.configs").setup({
@@ -99,6 +101,8 @@ require("harpoon").setup({
 		save_on_toggle = true
 	}
 })
+
+require("todo-comments").setup({})
 
 -- Keymaps
 vim.g.mapleader = " "
