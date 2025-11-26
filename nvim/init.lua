@@ -29,7 +29,7 @@ vim.pack.add({
 vim.cmd("colorscheme vague")
 vim.cmd(":hi statusline guibg=NONE")
 
-vim.lsp.enable({ 'lua_ls', "bashls" })
+vim.lsp.enable({ 'lua_ls', "bashls", "denols", "dartls" })
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {},
 	sync_install = false,
@@ -122,5 +122,6 @@ map("n", "<M-k>", "<cmd>cprev<CR>")
 map('i', '<C-a>', '<C-x><C-o>')
 
 -- Custom functions
-require("lsp_notify")
-require("eof_scrolloff")
+require("lsp-notify")
+require("eof-scrolloff")
+require("live-multigrep").setup()
