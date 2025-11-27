@@ -27,10 +27,11 @@ else
 		~/ \
 		~/projects/ ~/projects/rust/ \
 		~/university \
-		/home/shared/ \
+		/home/dev/ \
+		~/worm \
 		-mindepth 1 -maxdepth 1 -type d \
 		-not -name '.git' \
-		| fzf --tmux center,85% --color='info:#78a9ff,hl:#33b1ff,hl+:#33b1ff')
+		| fzf --color='info:#78a9ff,hl:#33b1ff,hl+:#33b1ff')
 fi
 
 selected_name=$(basename "$selected" | tr . _)

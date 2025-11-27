@@ -7,7 +7,7 @@ vim.o.incsearch = true
 vim.o.termguicolors = true
 vim.o.scrolloff = 12
 vim.o.signcolumn = "yes"
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "81"
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
@@ -24,12 +24,22 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
+	{ src = "https://github.com/Saghen/blink.cmp" },
+	{ src = "https://github.com/folke/todo-comments.nvim" },
 })
 
 vim.cmd("colorscheme vague")
 vim.cmd(":hi statusline guibg=NONE")
 
-vim.lsp.enable({ 'lua_ls', "bashls" })
+vim.lsp.enable({ 
+	'lua_ls', 
+	"bashls", 
+	"denols", 
+	"dartls",
+	"basedpyright",
+	"djlsp",
+})
+
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {},
 	sync_install = false,
@@ -92,6 +102,8 @@ require("harpoon").setup({
 	}
 })
 
+require("todo-comments").setup({})
+
 -- Keymaps
 vim.g.mapleader = " "
 local map = vim.keymap.set
@@ -122,5 +134,6 @@ map("n", "<M-k>", "<cmd>cprev<CR>")
 map('i', '<C-a>', '<C-x><C-o>')
 
 -- Custom functions
-require("lsp_notify")
-require("eof_scrolloff")
+require("lsp-notify")
+require("eof-scrolloff")
+require("live-multigrep").setup()
