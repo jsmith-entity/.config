@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 BOOKMARK_FILE="$HOME/.local/bookmarks.txt"
 

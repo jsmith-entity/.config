@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 switch_to() {
 	if [[ -z $TMUX ]]; then
@@ -24,11 +24,7 @@ if [[ $# -eq 1 ]]; then
 	selected=$1
 else
 	selected=$(find \
-		~/ \
-		~/projects/ ~/projects/rust/ \
-		~/university \
-		/home/dev/ \
-		~/worm \
+		~/nixos-dotfiles \
 		-mindepth 1 -maxdepth 1 -type d \
 		-not -name '.git' \
 		| fzf --color='info:#78a9ff,hl:#33b1ff,hl+:#33b1ff')

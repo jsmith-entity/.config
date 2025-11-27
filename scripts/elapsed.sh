@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 session_created=$(tmux display-message -p "#{session_created}" 2>/dev/null)
 now=$(date +%s)

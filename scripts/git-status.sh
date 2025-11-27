@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function tmux_update_git_status() {
 	branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || true
