@@ -1,6 +1,6 @@
 # fix task name only taking in first word
 
-- STATUS: CLOSED
+- STATUS: COMPLETE
 - PRIORITY: 99
 - TAGS: 'todo mgr.'
 

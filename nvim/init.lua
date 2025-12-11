@@ -38,6 +38,7 @@ vim.lsp.enable({
 	"dartls",
 	"basedpyright",
 	"djlsp",
+	"ocamllsp",
 })
 
 require("nvim-treesitter.configs").setup({

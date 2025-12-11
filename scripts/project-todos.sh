@@ -41,18 +41,25 @@ if [[ $OPEN_TASK -eq 1 ]]; then
 	# Collect task entries
 	for task in "$TODO_FOLDER"/*; do
 		file="$task/task.md"
+		completed=$(grep -m 1 '^- STATUS:' "$file" | awk -F': ' '{print $2}')
+		if [ "$completed" = "COMPLETE" ]; then
+			continue
+		fi
+
 		task_name=$(head -n 1 $file)
 		priority=$(grep -m 1 '^- PRIORITY:' "$file" | awk -F': ' '{print $2}')
 		priority=$(printf "[PRIORITY: %02d]" "$priority")
 		tags=$(grep -m 1 '^- TAGS:' "$file" | awk -F': ' '{print $2}')
 		tags=$(printf "[TAGS: %s]" "$tags")
-		entries+=("$(basename $task) $priority $tags $task_name")
+
+		title="$(basename $task) $priority $tags"
+		entries+=("$(printf "%-65s %s" "$title" "$task_name")")
 	done 
 
 	# Select todo task
 	selected_task=$(printf "%s\n" "${entries[@]}" \
-		| sort -k2,2nr \
-		| fzf --reverse \
+		| fzf --reverse --preview-window up,2:border-horizontal \
+		--preview 'echo {} | cut -d# -f2' \
 		| awk '{print $1}')
 
 	if [ -z "$selected_task" ]; then
