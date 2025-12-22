@@ -1,5 +1,5 @@
 # --all option to include completed tasks
 
-- STATUS: OPEN
+- STATUS: COMPLETE
 - PRIORITY: 20
 - TAGS: todo mgr

@@ -1,6 +1,6 @@
 # project specific bookmarks
 
-- STATUS: OPEN
+- STATUS: COMPLETE
 - PRIORITY: 50
 - TAGS: bookmarks
 

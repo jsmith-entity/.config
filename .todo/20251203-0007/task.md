@@ -1,6 +1,6 @@
 # sort tasks by priority
 
-- STATUS: OPEN
+- STATUS: COMPLETE
 - PRIORITY: 99
 - TAGS: todo mgr
 

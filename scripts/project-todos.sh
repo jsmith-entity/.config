@@ -25,6 +25,10 @@ while [[ $# -gt 0 ]]; do
 		NEW_TASK=1
 		shift
 		;;
+	--all)
+		ALL_TASKS=1
+		shift
+		;;
 	*)
 		echo "Unknown option: $1"
 		echo "Usage: $0 [--new]"
@@ -42,7 +46,7 @@ if [[ $OPEN_TASK -eq 1 ]]; then
 	for task in "$TODO_FOLDER"/*; do
 		file="$task/task.md"
 		completed=$(grep -m 1 '^- STATUS:' "$file" | awk -F': ' '{print $2}')
-		if [ "$completed" = "COMPLETE" ]; then
+		if [ "$completed" = "COMPLETE" ] && [ -z $ALL_TASKS ]; then
 			continue
 		fi
 
@@ -58,6 +62,7 @@ if [[ $OPEN_TASK -eq 1 ]]; then
 
 	# Select todo task
 	selected_task=$(printf "%s\n" "${entries[@]}" \
+		| sort -k2 -r \
 		| fzf --reverse --preview-window up,2:border-horizontal \
 		--preview 'echo {} | cut -d# -f2' \
 		| awk '{print $1}')

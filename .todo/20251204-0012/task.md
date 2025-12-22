@@ -1,5 +1,5 @@
 # route web teams notifications through to linux notify something
 
 - STATUS: OPEN
-- PRIORITY: 99
+- PRIORITY: 10
 - TAGS: worm

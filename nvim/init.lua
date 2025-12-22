@@ -25,6 +25,7 @@ vim.pack.add({
 	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 	{ src = "https://github.com/Saghen/blink.cmp" },
 	{ src = "https://github.com/folke/todo-comments.nvim" },
+	{ src = "https://github.com/elentok/open-link.nvim" },
 })
 
 vim.cmd("colorscheme vague")
@@ -100,6 +101,8 @@ require("harpoon").setup({
 
 require("todo-comments").setup({})
 
+require("open-link").setup({})
+
 -- Keymaps
 vim.g.mapleader = " "
 local map = vim.keymap.set
@@ -128,6 +131,8 @@ end)
 map("n", "<M-j>", "<cmd>cnext<CR>")
 map("n", "<M-k>", "<cmd>cprev<CR>")
 map('i', '<C-a>', '<C-x><C-o>')
+
+map("n", "<leader>O", "<cmd>OpenLink<cr>")
 
 -- Custom functions
 require("lsp-notify")
