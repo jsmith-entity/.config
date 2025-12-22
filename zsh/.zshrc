@@ -1,6 +1,6 @@
 autoload -U colors && colors
 bindkey -e
-PS1="%{$fg[blue]%}%~%{$fg[red]%} %{$reset_color%}$%b "
+PS1="$(((SHLVL>2))&&echo '%{$fg[blue]%}[nix]') %{$fg[blue]%}%~%{$fg[red]%} %{$reset_color%}$%b "
 
 source <(fzf --zsh)
 

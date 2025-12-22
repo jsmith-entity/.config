@@ -1,0 +1,46 @@
+# Kitty Terminal Configuration
+
+# Environment
+env TERM="screen-256color"
+
+# Font Configuration
+font_size 32
+
+# Window Settings
+window_opacity 1.0
+window_decorations none
+dynamic_padding yes
+option_as_alt both
+
+set_default_window_class nvim
+
+# Colors
+background #121212
+foreground #f2f4f8
+cursor #b6b8bb
+selection_background #44475a
+
+color0 #282828
+color8 #545454
+color1 #ee5396
+color9 #ff5454
+color2 #25be6a
+color10 #50fa7b
+color3 #08bdba
+color11 #f0fa8b
+color4 #78a9ff
+color12 #1200f8
+color5 #be95ff
+color13 #ff78c5
+color6 #33b1ff
+color14 #8ae9fc
+color7 #dfdfe0
+color15 #ffffff
+selection_foreground #222330
+
+# BEGIN_KITTY_FONTS
+font_family      family=Iosevka style='Medium Extended' features=-calt
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS

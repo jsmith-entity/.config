@@ -24,16 +24,12 @@ if [[ $# -eq 1 ]]; then
 	selected=$1
 else
 	selected=$(find \
-<<<<<<< Updated upstream
 		~/nixos-dotfiles \
-=======
 		~/ \
 		~/projects/ ~/projects/rust/ \
 		~/university \
 		/home/dev/ \
 		~/projects/ocaml \
-		~/worm \
->>>>>>> Stashed changes
 		-mindepth 1 -maxdepth 1 -type d \
 		-not -name '.git' \
 		| fzf --color='info:#78a9ff,hl:#33b1ff,hl+:#33b1ff')

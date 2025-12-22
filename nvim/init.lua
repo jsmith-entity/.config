@@ -13,7 +13,6 @@ vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.smartindent = true
 
--- Plugins
 vim.pack.add({
 	{ src = "https://github.com/vague-theme/vague.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -32,12 +31,8 @@ vim.cmd("colorscheme vague")
 vim.cmd(":hi statusline guibg=NONE")
 
 vim.lsp.enable({ 
-	'lua_ls', 
+	"lua_ls", 
 	"bashls", 
-	"denols", 
-	"dartls",
-	"basedpyright",
-	"djlsp",
 	"ocamllsp",
 })
 
