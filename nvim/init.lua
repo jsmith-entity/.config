@@ -26,6 +26,8 @@ vim.pack.add({
 	{ src = "https://github.com/Saghen/blink.cmp" },
 	{ src = "https://github.com/folke/todo-comments.nvim" },
 	{ src = "https://github.com/elentok/open-link.nvim" },
+	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
+	{ src = "https://github.com/sylvanfranklin/omni-preview.nvim" },
 })
 
 vim.cmd("colorscheme vague")
@@ -35,6 +37,7 @@ vim.lsp.enable({
 	"lua_ls", 
 	"bashls", 
 	"ocamllsp",
+	"tinymist",
 })
 
 require("nvim-treesitter.configs").setup({
@@ -102,6 +105,13 @@ require("harpoon").setup({
 require("todo-comments").setup({})
 
 require("open-link").setup({})
+require("typst-preview").setup({
+	dependencies_bin = {
+		["tinymist"] = "/home/jsmith-entity/.nix-profile/bin/tinymist",
+		["websocat"] = "/home/jsmith-entity/.nix-profile/bin/websocat",
+	}
+})
+require("omni-preview").setup({})
 
 -- Keymaps
 vim.g.mapleader = " "
@@ -133,6 +143,9 @@ map("n", "<M-k>", "<cmd>cprev<CR>")
 map('i', '<C-a>', '<C-x><C-o>')
 
 map("n", "<leader>O", "<cmd>OpenLink<cr>")
+
+vim.keymap.set("n", "<leader>po", ":OmniPreview start<CR>", { silent = true })
+vim.keymap.set("n", "<leader>pc", ":OmniPreview stop<CR>", { silent = true })
 
 -- Custom functions
 require("lsp-notify")
