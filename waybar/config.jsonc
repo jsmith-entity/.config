@@ -1,6 +1,6 @@
 [
 	{
-		"output": "eDP-1",
+		"output": ["DP-1", "eDP-1"],
 		"layer": "bottom",
 		"position": "top",
 		"height": 60,

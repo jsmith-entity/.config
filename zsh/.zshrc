@@ -1,23 +1,11 @@
 autoload -U colors && colors
 bindkey -e
-PS1="$(((SHLVL>2))&&echo '%{$fg[blue]%}[nix]') %{$fg[blue]%}%~%{$fg[red]%} %{$reset_color%}$%b "
+
+PS1="%{$fg[blue]%}%~%{$fg[red]%} %{$reset_color%}$%b "
 
 source <(fzf --zsh)
 
-c() {
-	case "$PWD" in
-	"$HOME" || \
-	"/home/shared" || "/home/shared/.config" || \
-	$(git rev-parse --is-inside-work-tree &>/dev/null && echo 1))
-		clear
-		LC_ALL=C ls -A --group-directories-first
-		;;
-	*)
-		clear
-		LC_ALL=C ls --group-directories-first
-		;;
-	esac
-}
+alias c="clear;ls -A"
 
 # Update git status
 source ~/.config/scripts/git-status.sh
