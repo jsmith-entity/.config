@@ -12,6 +12,7 @@ vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.smartindent = true
+vim.o.expandtab = true
 
 vim.pack.add({
 	{ src = "https://github.com/vague-theme/vague.nvim" },
@@ -38,6 +39,7 @@ vim.lsp.enable({
 	"bashls", 
 	"ocamllsp",
 	"tinymist",
+	"ccls",
 })
 
 require("nvim-treesitter.configs").setup({
@@ -144,8 +146,12 @@ map('i', '<C-a>', '<C-x><C-o>')
 
 map("n", "<leader>O", "<cmd>OpenLink<cr>")
 
-vim.keymap.set("n", "<leader>po", ":OmniPreview start<CR>", { silent = true })
-vim.keymap.set("n", "<leader>pc", ":OmniPreview stop<CR>", { silent = true })
+map("n", "<leader>po", ":OmniPreview start<CR>", { silent = true })
+map("n", "<leader>pc", ":OmniPreview stop<CR>", { silent = true })
+
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+map("n", "gD", "<cmd>Telescope lsp_references<CR>", { noremap = true, silent = true })
+map("n", "gi", "<cmd>Telescope lsp_definitions<CR>", { noremap = true, silent = true })
 
 -- Custom functions
 require("lsp-notify")
