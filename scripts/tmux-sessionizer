@@ -30,6 +30,7 @@ else
 		~/university \
 		/home/dev/ \
 		~/projects/ocaml \
+        /media/ \
 		-mindepth 1 -maxdepth 1 -type d \
 		-not -name '.git' \
 		| fzf --color='info:#78a9ff,hl:#33b1ff,hl+:#33b1ff')
