@@ -13,8 +13,8 @@
 			"disable-scroll": true
 		},
 		"network": {
-			"format-wifi": "{essid} ({signalStrength}%) ",
-			"format-ethernet": " {ifname}",
+			"format-wifi": "WIFI: {essid} ({signalStrength}%)",
+			"format-ethernet": "ETH: {ifname}",
 			"tooltip-format": " {ifname} via {gwaddr}",
 			"format-linked": " {ifname} (No IP)",
 			"format-disconnected": "Disconnected ⚠ {ifname}",
@@ -35,20 +35,8 @@
 			"on-click": "pavucontrol"
 		},
 		"clock": {
-			"format": "{:%R %a %d-%m-%Y}",
+			"format": "{:%a %d-%m-%Y}",
 			"tooltip": false
-		}
-	},
-	{
-		"output": "HDMI-A-3",
-		"layer": "bottom",
-		"position": "top",
-		"height": 40,
-
-		"modules-left": ["hyprland/workspaces"],
-		"hyprland/workspaces": {
-			"format": "{name}",
-			"disable-scroll": true
 		}
 	}
 ]
