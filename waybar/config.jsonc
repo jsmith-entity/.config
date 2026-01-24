@@ -7,7 +7,7 @@
 		"spacing": 25,
 
 		"modules-left": ["hyprland/workspaces"],
-		"modules-right": ["network", "cpu", "memory", "pulseaudio", "clock"],
+		"modules-right": ["network", "cpu", "memory", "pulseaudio", "clock", "custom/notifications"],
 		"hyprland/workspaces": {
 			"format": "{name}",
 			"disable-scroll": true
@@ -22,7 +22,8 @@
 		},
 		"cpu": {
 			"format": "CPU: {usage}%",
-			"interval": 2
+			"interval": 2,
+            "tooltip": true
 		},
 		"memory": {
 			"interval": 30,
@@ -36,7 +37,27 @@
 		},
 		"clock": {
 			"format": "{:%a %d-%m-%Y}",
-			"tooltip": false
-		}
+            "tooltip": false
+        },
+        "custom/notifications": {
+            "tooltip": true,
+            "format": "<span size='20pt'>{icon} </span>",
+            "format-icons": {
+                "notification": "󱅫",
+                "none": "󰂜",
+                "dnd-notification": "󰂠",
+                "dnd-none": "󰪓",
+                "inhibited-notification": "󰂛",
+                "inhibited-none": "󰪑",
+                "dnd-inhibited-notification": "󰂛",
+                "dnd-inhibited-none": "󰪑"
+            },
+            "return-type": "json",
+            "exec-if": "which swaync-client",
+            "exec": "swaync-client -swb",
+            "on-click": "swaync-client -t -sw",
+            "on-click-right": "swaync-client -d -sw",
+            "escape": true
+        }
 	}
 ]
